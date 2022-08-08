@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.todo.persistence.TodoDao">
+
+	<select id="selectAll" resultType="TodoVO">
+		SELECT * FROM tbl_todolist
+		ORDER BY date DESC, time DESC
+	</select>
+	
+	<select id="findById" resultType="TodoVO">
+		SELECT * FROM tbl_todoList
+		WHERE id = #{id}
+	</select>
+	
+	<select id="selectAllByUser" resultType="TodoVO">
+		SELECT * FROM tbl_todolist
+		WHERE user = #{user}
+		ORDER BY date DESC, time DESC
+	</select>
+	
+	<insert id="insert" parameterType="TodoVO">
+		INSERT INTO tbl_todoList(
+		todo,
+		t_date,
+		t_time,
+		t_compdate,
+		t_comptime,
+		user
+		) VALUES (
+		#{todo},
+		#{t_date},
+		#{t_time},
+		#{t_compdate},
+		#{t_comptime},
+		#{user}
+		)
+	</insert>
+
+	<update id="update" parameterType="TodoVO">
+		UPDATE tbl_todolist
+		SET
+		todo = #{todo},
+		t_date = #{t_date},
+		t_time = #{t_time},
+		t_compdate = #{t_compdate},
+		t_comptime = #{t_comptime},
+		completed = #{completed}
+		WHERE t_id = #{t_id}
+	</update>
+	
+	<delete id="delete"></delete>
+	
+		<select id="create_user_table">
+		create table if not exists tbl_users (
+			t_id varchar(20) primary key,
+			todo varchar(2000) not null,	
+	
+			t_date varchar(30),
+			t_time varchar(15),
+			t_compdate varchar(20),
+			t_comptime varchar(20)
+		)
+	</select>
+	<select id="create_auth_table">
+		create table if not exists tbl_authorities (
+			t_id bigint auto_increment primary key,
+		    username varchar(20),
+		    authority varchar(20)
+		)
+	</select>
+
+</mapper> 

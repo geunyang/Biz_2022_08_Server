@@ -15,7 +15,7 @@ import lombok.ToString;
 @Builder
 public class TodoVO {
 	
-	private Long t_id;
+	private long t_id;
 	private String todo;
 	private String t_date;
 	private String t_time;

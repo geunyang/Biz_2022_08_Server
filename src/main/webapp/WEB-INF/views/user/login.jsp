@@ -26,7 +26,7 @@
 </style>
 </head>
 <body>
-	<h1>로그인 페이지</h1>
+	<h1>로그인</h1>
 	<form:form action="${rootPath}/user/login">
 		<c:if test="${error == 'LOGIN_NEED'}">
 			<div> * 로그인이 필요한 페이지 입니다</div>

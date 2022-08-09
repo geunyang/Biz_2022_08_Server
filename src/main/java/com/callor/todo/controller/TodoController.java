@@ -59,7 +59,7 @@ public class TodoController {
 	
 	@RequestMapping(value="/{t_id}/update", method=RequestMethod.GET)
 	public String update(@PathVariable("t_id") String id, Model model) {
-		Long longId = Long.valueOf(id);
+		long longId = Long.valueOf(id);
 		TodoVO todo = todoService.findById(longId);
 		model.addAttribute("todo", todo);
 		return "todo/input";
@@ -73,7 +73,7 @@ public class TodoController {
 	
 	@RequestMapping(value="/{t_id}/complete", method=RequestMethod.GET)
 	public String complete(@PathVariable("t_id") String id, Model model) {
-		Long longId = Long.valueOf(id);
+		long longId = Long.valueOf(id);
 		TodoVO todo = todoService.findById(longId);
 		
 		Date date = new Date(System.currentTimeMillis());

@@ -30,6 +30,7 @@ form {
 </style>
 </head>
 <body>
+<h1>해야할 일을 입력하세요</h1>
 	<form:form>
 		<input name="t_id" type="hidden" 
 			value='<c:out value="${todo.t_id}" default ="0"/>' >

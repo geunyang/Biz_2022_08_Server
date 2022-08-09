@@ -31,7 +31,7 @@ form {
 </style>
 </head>
 <body>
-
+<h1>해야할 일 목록</h1>
 	<table>
 		<tr>
 
@@ -67,6 +67,7 @@ form {
 		</c:forEach>
 	</table>
 	<a href="${rootPath}/todo/input">입력하기</a>
+	<a href="${rootPath}/">홈가기</a>
 
 </body>
 </html>

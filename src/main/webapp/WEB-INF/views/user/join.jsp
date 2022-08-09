@@ -25,7 +25,7 @@
 </style>
 </head>
 <body>
-	<h1>회원가입 페이지</h1>
+	<h1>회원가입</h1>
 	<form:form>
 		<label>유저이름 : </label><input name="username" placeholder="USERNAME"/>
 		<label>비밀번호 : </label><input name="password" type="password"/>

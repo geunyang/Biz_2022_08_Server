@@ -47,7 +47,7 @@ public class UserController {
 		
 		return "/user/join";
 	}
-	
+		
 	@PreAuthorize("hasAnyRole(['ROLE_USER','ROLE_ADMIN'])")
 	@RequestMapping(value="/mypage",method=RequestMethod.GET)
 	public String mypage(Principal principal) {

@@ -32,14 +32,21 @@
 <body>
 <h1>안녕하세요</h1>
 <sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal.username"/>
-	<sec:authentication property="principal.email"/>
-	<sec:authentication property="principal.realname"/>
+	<h4>아이디 : <sec:authentication property="principal.username"/></h4>
+	<h4>이메일 : <sec:authentication property="principal.email"/></h4>
+	<h4>이름 : <sec:authentication property="principal.realname"/></h4>
+	<h4>권한 : <sec:authentication property="principal.authorities"/></h4>
 </sec:authorize>
-
+<sec:authorize access="isAnonymous()">
+	<h3><a href="${rootPath }/user/login">로그인</a></h3>
+	<h3><a href="${rootPath }/user/join">회원가입</a></h3>
+</sec:authorize>
+<sec:authorize access="isAuthenticated()">
+<h3><a href="${rootPath }/todo">TODO 보기</a></h3>
 <form:form class="logout" action="${rootPath}/logout">
 	<button>로그아웃</button>
 </form:form>
+</sec:authorize>
 
 </body>
 </html>

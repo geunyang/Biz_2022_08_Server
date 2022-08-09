@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import com.callor.todo.model.AuthorityVO;
@@ -16,8 +17,8 @@ public class UserServiceImplV1 implements UserService{
 	
 	@Autowired
 	private UserDao userDao;
-	
-	@Autowired
+	// 꼼수
+	@Bean
 	public void create_table() {
 		userDao.create_auth_table();
 		userDao.create_user_table();

@@ -3,6 +3,7 @@ package com.callor.todo.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import com.callor.todo.model.TodoVO;
@@ -15,7 +16,7 @@ public class TodoServiceImpl implements TodoService{
 	@Autowired
 	private TodoDao todoDao;
 	
-	@Autowired
+	@Bean
 	public void create_table() {
 		todoDao.create_todo_table();
 	}

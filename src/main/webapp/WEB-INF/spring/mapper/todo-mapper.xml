@@ -44,7 +44,7 @@
 		SET
 		todo = #{todo},
 		t_date = #{t_date},
-		t_time = #{t_time},
+		t_date = #{t_time},
 		t_compdate = #{t_compdate},
 		t_comptime = #{t_comptime},
 		t_comp = #{t_comp}

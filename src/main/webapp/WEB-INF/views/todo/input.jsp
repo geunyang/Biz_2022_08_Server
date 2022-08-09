@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
+<%@ taglib uri="http://www.springframework.org/security/tags"  prefix="sec"%> 
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +31,9 @@ form {
 </head>
 <body>
 	<form:form>
-
-		<input name="todo" placeholder="todo" value="${todo.todo }" />
+		<input name="t_id" type="hidden" 
+			value='<c:out value="${todo.t_id}" default ="0"/>' >
+		<input name="todo" placeholder="todo" value="${todo.todo}" />
 		<button>작성</button>
 	</form:form>
 </body>

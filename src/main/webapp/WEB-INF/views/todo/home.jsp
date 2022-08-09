@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
+<%@ taglib uri="http://www.springframework.org/security/tags"  prefix="sec"%> 
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,14 +55,14 @@ form {
 					</span>
 				</c:if>
 				<c:if test="${todo.t_comp == false}">
-				<a href="${rootPath}/todo/update?id=${todo.t_id}">
+				<a href="${rootPath}/todo/${todo.t_id}/update">
 					${todo.todo}
 				</a>
 				</c:if>
 				</td>
 				<td>${todo.t_compdate}</td>
 				<td>${todo.t_comptime}</td>
-				<td><a href="${rootPath}/todo/complete?id=${todo.t_id}">완료</a></td>
+				<td><a href="${rootPath}/todo/${todo.t_id}/complete">완료</a></td>
 			</tr>
 		</c:forEach>
 	</table>
